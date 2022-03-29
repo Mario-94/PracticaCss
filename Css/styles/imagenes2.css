@@ -1,0 +1,158 @@
+/* 
+object-fit: se usa para especificar ómo se debe cambiar el tamaño de <img> o <video> para que se ajuste a su contenedor.
+    fill:valor por defecto 
+    contain: El contenido se ajusta hasta rellenar de fomra ohjrizontal o vertical el contenedor sin deformarse
+    cover: el contenido se ajustará hasta rellenar de forma horizontal y vertical el contenedor sin deformarse 
+    none: El contenido no se redimensiona y mantiene su tamaño original mostrando solo el trozo de las dimensiones especificadas.
+    scale-down: Selecciona el menor de las comparaciones entre none y contain.
+object-position: Colocal la imagen cuando esta no se muestra completa en el contenedor
+    filter:
+        none
+        blur(px): desenfoca la imagen
+        brightness(%): Ajusta el billo de la imagen siendo 1 el original. De 0 a 1 da oscuridad y de 1 a n dan sobreexposición.
+        contras(%): Ajusta el contraste de la imagen siendo 1 el original. de 0 a 1 negro y de 1 a n da màs contraste.
+        drop-shadow(h-shadow v-shadow blur spread color): Aplica una sobra paralela a la imagen.
+        grayscale(%): convierte la imagen a escala de grises, 0 es el original y 1 seria el blanco y negro completamente.
+        hue-rotate(deg): Añade matiz de color a la  imagen . Se da un valor en grados según la rueda cromatica. El valor máximo es 360deg.
+        invert(%): Invierte el color de la imagen. Sacando un negativo. 0es el valor por defecto y 1 es totalmente invertido.
+        opacity(%): Controla la opacidad de la imagen. 1 es el valor por defecto y 9 es transparente
+        sturate(%): Controla la saturacion de color e la imagen. 1 es el valor por defecto, 0 es totalmente desaturada y por encima de 1 se sobresatra.
+        sepia(%): Aplica un tono sepia a la imagen. 0 es el valor por defecto y 1 es totalmente sepia.
+         */
+/* se redimensiona al tamaño del contenedor pero no se deforma */
+/* .img {
+  width: 250px;
+  height: 450px;
+  background-color: red;
+  object-fit:contain;
+} */
+
+/* se refimenciona al tamaño del contenedor pero en caso de que el contenedor sea pequeño solo se mostrara lo que ocupe del contenedor  */
+/* .img {
+    width: 250px;
+    height: 450px;
+    background-color: red;
+    object-fit:cover;
+  } */
+
+/* se muestra solo lo que cabe e la imagen en el contenedor se pierde la mayoria de la imagen */
+/* .img {
+    width: 250px;
+    height: 450px;
+    background-color: red;
+    object-fit:none;
+  } */
+/* es una tipo de if en caso de que el contenido se mas grande que la imagen aplica none, en caso de que la imagen sea mas grande que el contenedor se aplica contain */
+/* .img {
+  width: 250px;
+  height: 450px;
+  background-color: red;
+  object-fit: scale-down;
+} */
+
+/* para object-position muestra la imagen con el valor que le demos   en este caso de esta imagen solo muestra el valor de las x que es width y solo muestra los 250px*/
+/* .img {
+    width: 250px;
+    height: 450px;
+    background-color: red;
+    object-fit:cover;
+    object-position:right ;
+
+  } */
+
+/* .img {
+    width: 250px;
+    height: 450px;
+    background-color: red;
+    object-fit:contain;
+  } */
+/* 
+.img-2 {
+  max-width: 100%;
+} */
+
+/* Filtros */
+/* Desenfoque */
+/* .img-2 {
+  max-width: 100%;
+  filter: blur(10px);
+}
+.img-2:hover {
+  filter: none;
+} */
+/* Brillo */
+/* .img-2 {
+  max-width: 100%;
+  filter: brightness(0.5);
+}
+.img-2:hover {
+  filter: none;
+} */
+
+/* Contraste */
+/* .img-2 {
+    max-width: 100%;
+    filter:contrast(0.5);
+  }
+  .img-2:hover {
+    filter: none;
+  } */
+
+/*  En esta propiedad el valor se define de la siguiente manera:
+drop-shadow(h-shadow v-shadow blur spread color)
+sin embargo el valor spread no esta permitido 
+*/
+/* .img-2 {
+  max-width: 100%;
+  filter: drop-shadow(10px 10px 5px #4444dd);
+}
+.img-2:hover {
+  filter: none;
+} */
+
+/* Escala de grises  */
+/* .img-2 {
+  max-width: 100%;
+  filter: grayscale(0.5);
+}
+.img-2:hover {
+  filter: none;
+} */
+
+/* Aplica un tono en formato de la rueda monocromatica en sentido de las manesillas de la reloj  */
+
+/*invierte los colores  */
+/* .img-2 {
+  max-width: 100%;
+  filter: invert(0.6);
+}
+.img-2:hover {
+  filter: none;
+} */
+
+/* opacidad o transparencia */
+/* .img-2 {
+    max-width: 100%;
+    filter: opacity(0.2);
+  }
+  .img-2:hover {
+    filter: none;
+  }*/
+
+/* saturacion de la imagen */
+/* .img-2 {
+    max-width: 100%;
+    filter: saturate(0.2);
+  }
+  .img-2:hover {
+    filter: none;
+  } */
+
+  /*sepia  */
+  .img-2 {
+    max-width: 100%;
+    filter:sepia(10);
+  }
+  .img-2:hover {
+    filter: none;
+  }

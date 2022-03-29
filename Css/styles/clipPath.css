@@ -1,0 +1,84 @@
+/* 
+clip-path: Es una m{ascara que oculta partes de una caja.
+    circle(): dibuja un circulo, puede tener medida fija, circle(100px) o podemos especificar un centro at, circle(100px) la medidaX medidaY | palabrasClaveX palabrasClaveY (top, left,center, right
+    ellipse(): dibuja una elipse, funciona igual que el circulo, peroe en este caso podemos especificar 2 centros, el horizonaral y el vertical.
+    insert(): dibuja un borde transparente por dentro de la caja.
+        inser( all | Y X |top x bottom | top left bottom right)exiten la opción de redondear las esquinas, para ello después de los valores de insert pondremosround.
+        inser(** round all | top-left & bottom-right top-right &bottom-left,|
+        top-left  top-right & bottom-left bottom-right 
+        top-left topright bottom-right bottom-left)
+    polygon(): Especifica una serie de puntos (minimo 3) para definir la zona visible siendo el punto 0 0 la esquina superior izquierda.
+    Los puntos se especifican en parejas de ejeX y ejeY
+    generador de clip-path: https://bennettfeely.com/clippy
+        */
+
+body {
+  background-color: #333;
+}
+.box {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+/* Circulo */
+/* .box__item{
+    background-color: lightcoral;
+    width: 400px;
+    height: 400px;
+    clip-path: circle(100px at bottom right);
+} */
+/* elipse */
+/* .box__item{
+    background-color: lightcoral;
+    width: 400px;
+    height: 400px;
+    clip-path:ellipse(100px 50px at right bottom);
+} */
+/* inset */
+/* .box__item{
+    background-color: lightcoral;
+    width: 400px;
+    height: 400px;
+    clip-path:inset(20px round 20px 50px 100px 300px);
+} */
+/* poligon construir casi cualquier poligono que se nos ocurra pero no se pueden hacer curvas*/
+/* .box__item{
+    background-color: lightcoral;
+    width: 400px;
+    height: 400px;
+    /* clip-path:polygon(0 0,100% 0, 0 100%);  trinagulo */
+/* clip-path: polygon(25% 25%,75% 25%, 75% 75%, 25% 75%); cuadrado 
+    clip-path: polygon(0% 0%, 0%100%, 10% 100%, 10% 10%, 90% 10%, 90% 90%, 10% 100%,100% 100%, 100% 0%);
+} */
+.box__item{
+background-color: lightcoral;
+width: 400px;
+height: 400px; 
+    /* Transicion para el 
+     cuadrado 
+  Este funciona de esta manera cuando hace el recuadro*/
+  clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+  transition:clip-path .5s;
+}
+.box:hover > .box__item {
+  background-color: lightcoral;
+  width: 400px;
+  height: 400px;
+  /* clip-path:polygon(0 0,100% 0, 0 100%);  trinagulo */
+  /* clip-path: polygon(25% 25%,75% 25%, 75% 75%, 25% 75%); cuadrado */
+  clip-path: polygon(
+    0% 0%,
+    0%100%,
+    10% 100%,
+    10% 10%,
+    90% 10%,
+    90% 90%,
+    10% 90%,
+    10% 100%,
+    100% 100%,
+    100% 0%
+  );
+}

@@ -1,0 +1,68 @@
+/* Hay tres propiedades para las listas, se pueden aplicar al padre o a los elementos de la lista
+****list-style-type: Establece el estilo de la viñeta
+disc: circulo que viene por defecto
+circle: Circulo sin relleno
+square:cuadrado
+decimal: pone las cosas como numeros
+decimal-leading-zero: pone las cosas como sero pero con un cero al inicio hasta que llega a ocupar los dos decimales
+lower-roman: numero romanos en minisculas
+upper-roman: numeros romanos en mayusculas
+lower-greeek: griego en minusculas 
+lower-latin, minusculas del abecedario
+upper-latin: mayusculas del abecedario
+armenian:armenio
+georgian: georgian 
+lower-alpha: tanto alpha como latin hacen exactamente los mismo por que como tenemoms el teclado en latino alpha no funciona, pero si tuvieramos otro teclado estas serian las minusculas de nuestro teclado
+upper-alpha 
+
+****list-style-position:hace que las viñetas se coloquen por defecto o por fuera del elemento
+outside | inside
+
+****list-style-image:Pone una imagen en lugar de la viñeta, no se suele utilizar por que hay formas mucho màs eficientes de hacerlo.
+url(imagen)
+--normalmente se suele usar el shorthand list-style
+*/
+
+
+
+/* 
+.list{
+list-style-type: lower-alpha;
+} */
+/* *** esto no se utiliza por que hay mejores formas de poner na imagen como viñeta  a continuacion pondremos esa forma 
+.list{
+    list-style-image: url("../assets/logo.png");
+}*/
+
+/* 
+***Esto se utuliza para resetear las listas y poder empezarle a dar nuestro estilo desde cero***
+.list{
+    margin: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+} */
+
+.list{
+    list-style-type:none;
+}
+/*
+.list__item::before{
+    content: ''; contenido vacio 
+    display:inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url(../assets/logo.png);
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat; /* Esto no es necesario pero se suele usar esta forma  
+    padding-right: 1em;
+}*/
+.list__item{
+    background-image:url(../assets/logo.png);
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 2em;
+}
+

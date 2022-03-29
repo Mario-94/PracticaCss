@@ -1,0 +1,48 @@
+/* 
+Shorthands
+    grid: (sin soporte total)
+        https://developer.mozilla.org/es/docs/Web/CSS/grid
+    grid-templete:
+        Engloba grid-template-colums, grid-template-row y grid-template-areas
+    grid-gap:
+        Engloba grid-column-gap y grid-row-gap
+    
+    grid-column: Engloba grid-column-start y grid-column-end
+    grid-row: Engloba grid-row-start y grid-row-end
+*/
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    color: #eee;
+    font-family: sans-serif;
+    background-image: radial-gradient(circle, #b94bf8,#3a1957);
+    background-repeat: no-repeat;
+}
+.grid-container{
+    display: grid;
+    /* grid-template: 100px 200px/ 300px 400px; */
+    /* grid-template:
+    "first first first" 100px
+    "center center center" 200px
+    "last . ." 150px/ 300px 250px; */
+    grid-template: 100px 200px 300px/ 300px 250px 100px;
+
+}
+.grid-item{
+    border: 1px solid #000;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    color: #000;
+}
+/* Esto es un grid-track, se define como la union entre elementos que estan uno al lado de otro */
+.grid-item:first-child,
+.grid-item:nth-child(2),
+.grid-item:nth-child(3){
+    background-color: lime;
+}

@@ -1,0 +1,78 @@
+/* 
+    Ordenar elementos con grid-column y grid-row.
+
+    grid-column-start: Establece desde que column-line empezará el elemento.
+    grid-column-end: Establece hasta que column-line llega el elemento.
+    grid-row-start: Establece desde que row-line empezara el elemento.
+    grid-row-end: Establece hasta que row -line llega el elemento.
+
+    Existe un shorthad que engloba las 2 propiedades
+    grid-columns: start/ end.
+    grid-row: start/ end.
+
+    Tanto start como end admiten valores positivos, negativos y la palabra span.
+
+    Valor positivo: Empieza a contar las column-lines o las row-lines de izquierda a derecha.
+
+    Valor negativo: Empieza a contar las column-lines o las row-lines desde derecha a izquierda.
+
+    span: Estalece cuantas columnas ha de ocupar, span 3 es como decirle que oucpe 3 columnas.
+
+    ***tips:Si ponemos el valir end -1 llegará hasta el final.
+ */
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  color: #eee;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-image: radial-gradient(circle, #b94bf8, #3a1957);
+  background-repeat: no-repeat;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px;
+}
+.grid-item {
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 2rem;
+}
+.grid-item:nth-child(3),
+.grid-item:nth-child(4) {
+  background-color: orange;
+}
+.grid-item:first-child,
+.grid-item:nth-child(2) {
+  background-color: violet;
+}
+.grid-item:nth-child(4) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.grid-item:nth-child(3) {
+  grid-column-start: 3;
+  /* grid-row-start: 1;
+  grid-row-end: 3; 
+  span indica el numero de espacios que ocupara ya sean row o colum indicandole con grid-row o grid-column
+  */
+  grid-row-start: span 2;
+}
+.grid-item:nth-child(2) {
+  /* grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4; */
+  grid-column: 1/3;
+  grid-row: 2/4;
+}

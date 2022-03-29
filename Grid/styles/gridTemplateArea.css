@@ -1,0 +1,43 @@
+/*  */
+body{
+    height: 100vh;
+    color: #eee;
+    font-family: sans-serif;
+    background-image: radial-gradient(circle,#b94bf8,#3a1957);
+    background-repeat: no-repeat;
+}
+.main{
+    display: grid;
+    grid-template-columns: 150px repeat(2,1fr);
+    grid-template-areas: 
+    /* con esto le indicamos los espacios que ocupara nuestros elementos, para no estar con numeros solo ponemos con letras y a los elementos que le vamos a aplicar estas acciones igual le ponemos el nombre que queremos que ocupe.
+    ***NOTA: si solo queremos que ocupe cierta area y deje un espacio le hacemos con un . o - para dejar ese espacio en blanco */
+    "header header header"
+    "aside article article"
+    ". footer footer";
+}
+.header,
+.footer{
+    padding: 2rem 0;
+    text-align: center;
+    background-color: peru;
+}
+.header{
+    grid-area:header;
+
+}
+.aside{
+    background-color: hotpink;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    grid-area: aside;
+}
+.article{
+    background-color: royalblue;
+    padding: 1rem;
+    grid-area: article;
+}
+.footer{
+    grid-area: footer;
+}

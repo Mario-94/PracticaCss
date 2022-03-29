@@ -1,0 +1,53 @@
+/* NO exiten propiedades para imagenes en CSS
+1.- Imagenes responsives. En el archivo base se recomienda poner esta regla
+img{
+    max-width:100%;
+}
+2.- Las imagenes por defecto son elementos inline, esto causa un espacio por debajo devido a su linea-height, se puede solucionar de dos formas.
+    Dando un line-height:0 al contenedor o un display:block a la imagen
+3.- Centrado horizontal
+    imagen con display:block y márgenes laterales automáticos
+    text-align:center, si la imagen no es de bloque
+4.- Centrado vertical
+    Flexbox (la mejor opcion)
+    vercial-align:middle, a la imagen y al texto
+ */
+
+/* .img{
+    max-width: 100%;
+    display: block;
+
+ } */
+/* para quitar el borde botton que aparce en la parte de abajo podemos poner un display blox en el contenedor o poner un line-hefight:0 en el contenido */
+/* .img-container{
+     
+     background-color: red;
+ } */
+
+/* para centrar una imagen utilizamos margin-left auto y margin-right-auto  */
+/* .img{
+    max-width: 100%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+ }
+ .img-container{
+     background-color: lavender;
+ } */
+
+/* para alinera verticalmente se hace de la siguiente manera */
+.img {
+  max-width: 100%;
+}
+.img-container {
+  display: table;
+  background-color: lavender;
+}
+.img-container img,
+.img-container span {
+  vertical-align: middle;
+}
+.img-container span {
+  display: table-cell;
+}

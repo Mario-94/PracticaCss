@@ -1,0 +1,165 @@
+/* 
+Flexbox
+    Alineamiento
+    Esta propiedad para alinear se aplica SIEMPRE el flex-container
+    Existen propiedades para el main-axis y para el cross-axis.
+    main-axis:
+        justify-content: flex-start(default) | center | space-between | space-around | space-evenly |flex-end.
+            flex-start aliene los elementos al principio del main axis 
+            center centra los elementos en la mitaad del main axis
+            flex-end alienea los elementos al final del main axis
+            
+            space-between distribuye los items a la misma distancia y no deja espacios exterior ni en la primera ni en el último flex-item.
+
+            space-evenl distribuye los items y los espacios exteriores del primer y último flex-item dejando la misma distancia entre todos.
+    cross-axis:
+        aling-item una sola linea.
+            flex-start | center | flex-end | stretch (default) | baseline
+        aling-content: varias lineas
+            flex-start | center | flex-end | stretch (default) | baseline
+        aling-selft : Se aplica al flex-item. Sirve para alinear un elemento en concreto en el cross-axis
+
+TRUCO EXTRA:
+            */
+/* Esto nos ayuda a alinear en el plano hoirizontal */
+/*.flex-container {
+  background-color: #fca17d;
+  height: 400px;
+  display: flex;
+  margin-bottom: 1em;
+  /* valor por defecto */
+/* justify-content: flex-start; */
+/* center
+  centra los elementos 
+  justify-content: center;
+  */
+/* Acomoda todos los elementos de teal manera que tengan un espacio entre ellos
+  independientes de los elementos
+  justify-content: space-between;
+   */
+/* de esta manera agregamos un pequeño margen entre los elementos
+justify-content: space-around;
+ */
+/* Este distribuye todos los elementos en un mismo espacio entre ellos 
+ justify-content: space-evenly;
+  */
+/* con esto conseguimos  alinearlo de izquierda a dereche 
+  justify-content: flex-end;
+  
+}*/
+
+/* Esto se utiliza para alinear en el plano vertical */
+/*
+.flex-container {
+    background-color: #fca17d;
+    height: 400px;
+    display: flex;
+    margin-bottom: 1em;
+    /*
+    valor por defecto
+     align-items: flex-start; */
+/*
+     Alinea al centro de manera horizontal
+     *
+     *
+     *
+     *********
+     *
+     *
+     *
+     de la menera siguiente
+     align-items: center; */
+/* Alinea en manera vertical pero de la parte inferior derecha
+     align-items: flex-end;
+      */
+/* Este nos permite alargar todos los elementos hasta ocupar todo el espacio del contenedor
+      en este caso no se nota por que tenemos un height declarado de en el item
+      align-items: stretch;
+       
+}*/
+
+/* De esta manera acomodamos los  elementos por nuestro contenido */
+
+/* .flex-container {
+  background-color: #fca17d;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+    align-content: flex-end;
+} */
+
+/* conten e item no lo ocupamos para este ejemplo */
+/* .flex-item {
+  width: 50px;
+  height: 50px;
+  margin: 0.5em;
+  color: white;
+  background-color: #9a34be;
+  text-align: center;
+  line-height: 50px;
+} */
+
+
+/* .box {
+    border: 1px solid black;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  /* Esto sirve para alinear el texto y la imagen al centro de la pantalla de manera vertical independiente del tamaño del texto 
+  align-items:center;
+  */
+/* De esta manera lo que conseguimos es alargar una imagen 
+  align-items:stretch;
+} 
+.box img{
+    max-width: 50%;
+}*/
+
+
+.prices {
+  display: flex;
+  align-items: flex-start;
+  height: 600px;
+  border: 1px solid black;
+}
+.prices__item{
+    width: 25%;
+    height: 300px;
+}
+.prices__item:first-child{
+    background-color: peru;
+}
+.prices__item:nth-child(2){
+    background-color: green;
+    line-height: 20px;
+    align-self: center;
+}
+.prices__item:nth-child(3){
+    background-color: indianred;
+    line-height: 15px;
+}
+.prices__item:nth-child(4){
+    background-color: lightgreen;
+    line-height: 50px;
+    align-self: center;
+}
+
+.truco__contenedor{
+ background-color: #fca17d;
+ height: 400px;
+ width: 200px;
+ display: flex;
+ flex-wrap: wrap;
+}
+/* Con el truco lo que hacemos es que los margenes top, bottom, left y right son contrarios a lo que le pedimos, si deseamos poner un elemento en el centro independiente del contenedor, es decir siempre al centro de todo, lo que haremos es poner margin:auto */
+.truco__items{
+    width: 50px;
+    height: 50px;
+    margin-top: auto;
+    margin-right: auto;
+    color: white;
+    background-color: #9a348e;
+    text-align: center;
+    line-height: 50px;
+}

@@ -1,0 +1,175 @@
+/* 
+Flexbox: 
+    Propiedad flex: Es un shorthand que engloba las siguientes propiedades.
+    Todas las medidas se establecen en función del espacio disponible en el contenedor.
+    flex-grow: Establece què ahcer cuando hay espacio sobrante. Cuantas divisiones coge el elemento. El valor es entero desde 0 hata n o auto.
+
+    flex-shink: establece qué hacer cuando no hay espacio suficiente. Cuantas divisiones pierde el elemento . El valor es un entero desde 0 hasta n.
+
+    flex-basis: Establece cuando tiene que ocupar el item antes de encojer o extenderse. Flex basis prevalece ante width si el main-axis es horizontal o ante height si el main-axis es vertical. El valor que un entero desde 0 hasta n.
+
+    Los Valores de flex son:
+        Por defecto es 0 1 auto.
+        auto: 1 1 auto;
+        none: 0 0 auto;
+    
+    Order: Establece què orden ocupará el elemento en el contenedor flex. El valor es el "peso" respecto a los valores que tengan los otros elementos. Por defecto es 0.
+
+    Extra:
+        Existen un shorthand para flex-direciton y flex-wrap. flex-flow: flex-direction flex-wrap. 
+        flex-flow: column wrap;
+
+*/
+
+/* 
+El flex-grow nos permite que se calcule el espacio restante y se lo asigne al contenido que deseamos esto con las idicaciones despues de flex-grow: 1 hasta n; 
+.flex_container{
+    background-color: #fca17d;
+    height: 300px;
+    width: 400px;
+    display: flex;
+}
+.flex__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    color: aliceblue;
+    background-color: #9a348E;
+}
+.flex__item:nth-child(2){
+    background: darkblue;
+    flex-grow: 1;
+}
+.flex__item:nth-child(3){
+    background: lightskyblue;
+    flex-grow: 2;
+}
+.flex__item:nth-child(4){
+    background: darkgoldenrod;
+    flex-grow: 5;
+} */
+
+/* La propiedad flex-shrik: nos permite quitar espacio para que los elementos restantes obtengan mas espacio, en este caso el width del flex__item tiene 200px si lo tenemos solo pues cada elementos le falta espacio para cubrir estos espacios, pero gracias a flex-shrik podemos quitarle a un elemento y agregar esto a los de mas de tal manera que estos consigan el espacio deseado (width:200px;) que es lo que le indicamos 
+.flex_container{
+    background-color: #fca17d;
+    height: 300px;
+    width: 400px;
+    display: flex;
+}
+.flex__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    color: aliceblue;
+    background-color: #9a348E;
+}
+.flex__item:nth-child(2){
+    background: darkblue;
+   flex-shrink: 2;
+}
+.flex__item:nth-child(3){
+    background: lightskyblue;
+   
+}
+.flex__item:nth-child(4){
+    background: darkgoldenrod;
+   
+}*/
+
+/* con el flex-basis, nos permite establecer un valor con el que iniciara el item, sin depender de nada, pero para que este no se vea afectado por los demas es bueno utilizar flex-shrink:0; 
+
+.flex_container {
+  background-color: #fca17d;
+  height: 300px;
+  width: 400px;
+  display: flex;
+}
+.flex__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: 50px;
+  color: aliceblue;
+  background-color: #9a348e;
+}
+.flex__item:nth-child(2) {
+  background: lightblue;
+  flex-basis: 200px;
+  flex-shrink: 0;
+}
+.flex__item:nth-child(3) {
+  background: lightskyblue;
+}
+.flex__item:nth-child(4) {
+  background: darkgoldenrod;
+}
+
+*/
+
+/*
+Se recomienda utilizar flex y poner las propiedades de la siguiente manera.
+
+.flex_container {
+    background-color: #fca17d;
+    height: 300px;
+    width: 400px;
+    display: flex;
+  }
+  .flex__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 50px;
+    color: aliceblue;
+    background-color: #9a348e;
+    flex:0 1 150px;
+  }
+  .flex__item:nth-child(2) {
+    background: lightblue;
+  
+  }
+  .flex__item:nth-child(3) {
+    background: lightskyblue;
+  }
+  .flex__item:nth-child(4) {
+    background: darkgoldenrod;
+  }
+*/
+
+/* 
+Order acomoda las cosas en un order pero este es como z-index, nos permite acomodar alas cosas dependiendo el peso que le demos a nuesto elemento ejemplo:  */  
+.flex_container {
+    background-color: #fca17d;
+    height: 300px;
+    width: 400px;
+    display: flex;
+  }
+  .flex__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 50px;
+    color: aliceblue;
+    background-color: #9a348e;
+    order: 1;
+  }
+  .flex__item:nth-child(2) {
+    background: lightblue;
+  order: 3;
+  }
+  .flex__item:nth-child(3) {
+    background: lightskyblue;
+    order: 0;
+  }
+  .flex__item:nth-child(4) {
+    background: darkgoldenrod;
+    orphans: 6;
+  }
+  

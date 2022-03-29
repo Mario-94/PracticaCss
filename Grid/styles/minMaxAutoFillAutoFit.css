@@ -1,0 +1,46 @@
+/* 
+minmax():
+    Recibe dos parámetros para estalecer el mínimo y el máximo que puede tener los items.
+    grid-template-columns: repeat(2,minmax(100px,1fr));
+
+    min-content: mínimo necesario en función del contenido.
+    max-content: máximo necesario en función del contenido.
+
+    autoo-fill: Crea tanto grid-items vacios como quepan en el viewport respetando las medidas.
+
+    auto-fit: Elimina los grid-items vacios que no se estén ocupando.
+ */
+
+body {
+height: 100vh;
+color: #eee;
+font-family: 'Times New Roman', Times, serif;
+background-image: radial-gradient(circle, #b94bf8, #3a1957);
+background-repeat: no-repeat;
+}
+.grid-container{
+display: grid;
+row-gap: gap;
+/* 
+de esta manera lo que logramos es dar un tamño fijo en caso de utilizar imagenes, para eso podemos establecer el minimo de pixeles que tendremos 
+grid-template-columns: repeat(3,minmax(70px,1fr)); */
+/* mientras que max-conten lo que nos permite es que no se rompa el text, es decir no haga saltos de linea.
+grid-template-columns: repeat(3,minmax(max-content,1fr));
+*/
+/* grid-template-columns: repeat(3,minmax(min-content,1fr)); */
+/* Este crea celdas aun que no se ocupen, con el tamaño que definimos
+grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+ */
+/* mientras que auto-fit, acomodas los items en el espacio que no se esta utilizando.
+ademas de que cualquiera de las dos sirve para on utilizar medias querys y hacer el responsive */
+grid-template-columns: repeat(auto-fit,minmax(50px,1fr));
+
+}
+.grid-item{
+    border: .5px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+}

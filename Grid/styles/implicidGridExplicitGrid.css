@@ -1,0 +1,78 @@
+/* 
+Explicid grid: 
+    Es un grid que declaramos , tanoto con grid-template-columns como grid-template-row
+
+Implicid grid:
+    Es el grid que no declaramos, los items que quedan fuera del exolicit grid.
+
+grid-auto-columns:  
+    Establece que hace con las columnas no difeinidas
+
+grid-auto-rows:
+    Establece que hacer con las columnas no definidas.
+
+grid-auto-flow:
+    Establece la diferencia en las cuales se va a pointar el implicit grid
+    Admite tres valores:
+    Erow(default): Se creará filas adicionales.
+    column: Se crearan columnas adicionales.
+    dense: Establece que hacer con los huecos que queden.
+
+*/
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  color: #eee;
+  font-family: sans-serif;
+  background-image: radial-gradient(circle, #b94bf8, #3a1957);
+  background-repeat: no-repeat;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 100px);
+
+  /* grid-auto-flow, crea filas o columns extras segun lo indiquemos, de esta manera podemos crear mas columnas o filas segun sea el caso. Ejemplo
+  notaremos que las ultimas columnas 
+  K L
+  L N
+    grid-auto-columns: 100px;
+  grid-auto-flow: column;
+  */
+
+
+  /* Rellenamos los huecos disponibles con el valor mas cercano y que pueda entrar en ese espacio, para esto no es necesario que editemos algun valor manuelmente, grid ya cuenta con un algoritmo */
+  grid-auto-flow:column dense;
+}
+.grid-item {
+  border: 0.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.grid-item:nth-child(2){
+    grid-column: span 3;
+    grid-row: 2/4;
+    background-color: purple;
+}
+.grid-item:nth-child(3){
+    grid-column: 3/6;
+    background-color: orange;
+
+}
+.grid-item:nth-child(5){
+    grid-column: span 5;
+    background-color: peru;
+    
+}
+.grid-item:last-child{
+    grid-column: span 3;
+    grid-row: span 3;
+    background-color: royalblue ;
+}

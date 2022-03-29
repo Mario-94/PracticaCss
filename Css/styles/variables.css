@@ -1,0 +1,19 @@
+:root{
+    --color:blue
+}
+.paragraph{
+    color: var(--color);
+}
+.article{
+    --color:green;
+}
+.check:checked + .box{
+    /* Cuando agregamos  la instruccion +.box, le indicamos que como div es hermoano de checkbox ereda las propiedades de esta sentencia    */
+    --color:purple;
+
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background:var(--color) ;
+}

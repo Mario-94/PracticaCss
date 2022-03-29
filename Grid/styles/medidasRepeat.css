@@ -1,0 +1,50 @@
+/* 
+Medidas de la cuadrícula.
+    se pueden dar medidas con cualquiera de las unnidades que ya concemos y dos más que vienen con grid, fr y auto.
+        fr: Equivale a n fracciones del espacio disponibel después de establecer las medidas fijas.
+        auto: Equivale al espacio que quede después de repartir todos elementos, es el último que se reparte. El tamaño mínimo del item será el espacio del contenido + el padding si lo tuviera.
+    
+    Funciónes repeat()
+        Con la función repeat podemos establecer repeticiones de medida o patrones.
+        En el caso "simple" recibíra 2 parámetros (valores):
+        repeat(nColumnas o nFilas, medida)
+        grid-template-columns: repeat(4,100px) es lo mismo que (grid-template-column: 100px 100px 100px 100px;
+    
+    Si como segundo valir añadimos más de un medida, contruiremos un patrón, no hay limete de valores.
+        grid-template-columns: repeat(2,100px 50px...) es lo mismo que (grid-template-columns: 100px 50px 50px 100px;)
+ */
+
+ body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    color: #eee;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background-image: radial-gradient(circle, #b94bf8, #3a1957);
+    background-repeat: no-repeat;
+  }
+  
+  .grid-container{
+      display: grid;
+      /* De esta manera lo que pasa es que asigna 50px al primero y despues a los otros les asigna segun lo que dividamos es decir al segundo le damos 50px y al tercero le damos 100px 
+      grid-template-columns: 50px 1fr 2fr;*/
+
+      /* auto funciona de la siguiente manera asignando el espacio restante al elemento, esto en base al tamaño del elemento que se presentara 
+      grid-template-columns: 100px 100px auto 100px;
+      */
+
+      /* repeat, nos permite que las columnas o filas tengan las misma  */
+      grid-template-columns: 100px repeat(4, 50px);
+      
+  }
+
+  .grid-item{
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem ;
+      font-size: 1rem;
+  }

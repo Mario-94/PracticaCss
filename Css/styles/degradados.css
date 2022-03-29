@@ -1,0 +1,74 @@
+/* 
+https://developer.mozilla.org/es/docs/web/CSS/radial-gradient
+Un degradado es una transición entre un color y otro. El navegador calculará todos los pasos intermedios entre los colores degradados.
+Es un valor backgroud-imge.
+Exiten dos tipos de degradados: lineal y radial.
+Degradado lineal:
+    linear-granadient([direction],color-1, color-2...) 
+    background-image: linear-gradient(red,blue);
+    La direccion es opcional, se puede establecer un ángulo(20deg,190deg...) o estableciendo la direccón del degradado con "to top | right |bootom @left |top left| top right |bottom left | bottom right"
+    backgroud-image: linear-gradient( to right, red , blue);
+    Si no establecemos paradas de color, el navegador dividirá el espacio disponible entre los colores que tenga que pintar.
+    2 colores 0% 100%
+    3 colores 0% 50% 100%
+    
+    Para Establecer las paradas se puede usar cualquier medida, px, em, %... si las paradas7inicios empiezan en le mismo sitio se genera un corte sólido .
+    background-image: linear-gradient(red 50% blue 50%);
+    
+    linear-grafient(direction, color-1 stop, color-2 start [stop]...)
+    background-image: linear-gradient(red 50% blue 50% 70% green 75%)
+Degradados radiales
+    Funcionan de una forma similar a lo degradados lineale.
+    background-image:radial-gradient([shape],red,blue)
+    background-image: radial-gradient(red, blue);
+    
+    Por defecto, shape se ajustará al tamaño de la caja, pero podemos establecer si queremos un circulo o un elipse y definir el radio o los radios.
+    background-image: radial-gradient(circle 100px, red, blue);
+    background-image: radial-gradient(ellipse 100px 50px, red, blue);
+    si no establecemos un punto de origen, el punto 0 será el centro del elemento. Para establecer el punto de origen podemos hacerlo en medidas o con palabras clave.
+    Con la palabra "at" establecemos el punto de origen. Los valores que acepta son: 
+        too |right| bottom| lef| center| closet-side| closest-corner| farthest-side| farthest-corner.
+    background-image: radial-gradient(cicle 100px at top left, red 50%, blue 50%);
+    si establecemos un solo valor, el segundo por defecto será center.
+    background-image: radial-gradient(circle 100px at top, red 50%, blue 50%);
+    */
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 3px solid black;
+  margin: 2em auto;
+  /*  de derecha a izquierda background-image: linear-gradient(to right,red, blue); */
+  /* de la linea superor izquierda hasta la inferior derecha background-image: linear-gradient( to bottom right, red, blue); */
+  /* Cuando ponemos grados esta inicia el en la parte inferior central y de hay contamos los grados  background-image: linear-gradient(0, red ,blue); */
+
+  /* background-image: linear-gradient(red 50%,blue 50% 75%,yellow ); de esta manera lo que conseguimos es que el rojo sea solido el azul sea solido y despues denga un degradado */
+  /* background-image:radial-gradient(circle 100px at top,red, blue); */
+  /* background-image:radial-gradient(ellipse 100px 50px at top right,red 50%, blue 50%); */
+  /*
+  Esta seria a forma complicada en la que deberiamos calcular manualmente cada patron, para evitar esto usaremos repeating-linear-gradient
+   background-image: linear-gradient(
+    45deg,
+    blue 25%,
+    red 25%,
+    red 50%,
+    blue 50%,
+    blue 75%,
+    red 75%
+  ); 
+  background-size: 50px 50px; */
+  /* repeteaing-linear-gradient se realizara */
+  /*
+para hacer un degradado solido es de esta forma y se repiten los patrones 
+ background-image: repeating-linear-gradient(30deg, red 0, red 20px,blue 20px, blue 40px); */
+  /* 
+De esta manera lo que logras es un deradado
+ background-image: repeating-linear-gradient(20deg, red 10px, blue 70px); */
+  background-image: repeating-radial-gradient(
+    circle 20px,
+    red 0,
+    red 30px,
+    blue 30px,
+    blue 60px
+  );
+}
