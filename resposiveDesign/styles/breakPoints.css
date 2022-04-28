@@ -1,0 +1,37 @@
+/*  
+Breakpoints: Exiten dos tipos de breakpoints, los majos breakpoints y los minor breakpoints
+    Los major breakpoints son los que cambian la aparienci ade la web de forma significativa.
+    Los minor breakpoints son los que cambian una cosa especifica para un elemeto en concreto.
+
+Medidas mñas comunes: 
+    0 -320px -360: móviles portrait
+    480 -640px - 768px: móviles landscape -tablet
+    1024 -1200px - 1400px -1440px: tablets grandes, portatiles no hd 
+    1920 - hacia arriba: HD, 2K, 4K
+    
+en el modelo de desarrollo de primero mobil o first movile
+escribimos primero el valor por defecto a movil y despues cuando va creciendo 
+    */
+.menu{
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+}
+/* primero lo movil el valor por defecto para el movil */
+body{
+background-color: royalblue;
+}
+/* despues el de tablet  */
+@media screen and (min-width: 480px) {
+    body{
+        background-color: lime;
+    }
+}
+/* por ultimo el de escritorio */
+@media screen and (min-width: 1200px) {
+    body{
+        background-color: rosybrown;
+    }
+}
